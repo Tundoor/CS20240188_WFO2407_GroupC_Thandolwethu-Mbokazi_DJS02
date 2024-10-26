@@ -18,10 +18,11 @@ form.addEventListener("submit", (event) => {
     console.error("Error: 0 as divider")
     console.trace()
   }
-
-  
-  
-  
+  // When value is not a number
+  else if (isNaN(dividend) || isNaN(divider)) {
+    document.body.innerHTML = `<h1>Something critical went wrong. Please reload the page</h1>`
+    console.error(new Error("Error: Used numbers in input").stack)
+    }
   else {
     // Rounds down answer
     result.innerText = Math.floor(dividend / divider);
